@@ -62,14 +62,7 @@
       <!-- START CARD -->
 
       <div class="card-list d-flex flex-wrap justify-content-start">
-        <Card :title="'Edupath'" :description="description"/>
-        <Card :title="titlea" :subtitle="subtitlea" :description="descriptiona"/>
-        <Card :title="title" :subtitle="subtitle" :description="description"/>
-        <Card :title="title" :subtitle="subtitle" :description="description"/>
-        <Card :title="title" :subtitle="subtitle" :description="description"/>
-        <Card :title="title" :subtitle="subtitle" :description="description"/>
-        <Card :title="title" :subtitle="subtitle" :description="description"/>
-        <Card :title="title" :subtitle="subtitle" :description="description"/>
+        <Card v-for="(blog, index) in blogs" :key="index" :blog="blog" />
       </div>
       <!-- START CARD -->
     </div>
@@ -79,14 +72,8 @@
 
 <script setup>
 
-import Card from '~/components/Card.vue';
+// import Card from '~/components/Card.vue';
+const blogs = ref(null)
+blogs.value = await $fetch("/api/blogs")
 
-const title = ref("Edupath")
-const subtitle = ref("Nuxt Js Online Courses & Education LMS Template")
-const description = ref("Edupath is a Vue Nuxt Js Online Courses & Education LMS Template designed specifically for educational...")
-
-
-const titlea = ref("Bonx v1.0 ")
-const subtitlea = ref("Vue Js Gaming Website Template with Nuxt Js")
-const descriptiona = ref("Bonx – Vue Js Gaming Website Template with Nuxt Js is a comprehensive gaming website design solution. This...")
 </script>
