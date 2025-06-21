@@ -111,7 +111,7 @@ const route = useRoute()
 
 
 // Récupérer les blogs
-const { data: blog } = await useFetch(`/api/blogs/${route.params.id}`)
+const { data: blog } = await useFetch(`/api/blogs/${route.params?.id}`)
 
 // Récupérer les blogs
 const { data: blogsData } = await useAsyncData('blogs', () => $fetch('/api/blogs'))
