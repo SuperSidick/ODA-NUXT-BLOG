@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
   
-  //ici on va prendre l'id dans la paramètre 
+  //ici on va prendre l'id dans le paramètre 
   const id = parseInt(event.context.params?.id as string)
 
   //On va récupérer les blogs c'est plus simple
